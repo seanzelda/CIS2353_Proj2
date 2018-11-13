@@ -23,10 +23,8 @@ public class Polynomial {
                 walker.nextNode = node;
                 numberOfNodes++;
             }
+            System.out.println(polyArray[i]);
         }
-
-
-        
     }
     
     public Polynomial(Polynomial otherPoly) {
@@ -49,14 +47,14 @@ public class Polynomial {
 //        }
     }
     
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for(int i = 0; i < numberOfNodes; i++) {
             Node walker = firstNode;
                 while(walker.nextNode != null) {
                     walker = walker.nextNode;
-                }  
-               
+                }                
         }
         return builder.toString();
     }
@@ -84,7 +82,7 @@ public class Polynomial {
 
             String[] monArray = monomial.split("x");
             try {
-                 monArray[1] = monArray[1].replace("^", "");
+                monArray[1] = monArray[1].replace("^", "");
             }
             catch (Exception ex) {
                 
@@ -104,8 +102,8 @@ public class Polynomial {
     }
     
     private static class Node {
-        private int coefficient;
-        private int exponent;
+        private final int coefficient;
+        private final int exponent;
         private Node nextNode;
     
         private Node(int coefficient, int exponent) {
@@ -119,6 +117,5 @@ public class Polynomial {
             this.exponent = exponent;
             this.nextNode = nextNode;
         }
-}
-
+    }
 }

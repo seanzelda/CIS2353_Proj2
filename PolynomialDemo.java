@@ -14,7 +14,7 @@ public class PolynomialDemo {
         ArrayList<Integer> addNumbers = new ArrayList<>();
         while (keepGoing) {
             for(int i = 0; i < myArrayList.size(); i++) {
-                System.out.println(i + " : " + myArrayList.get(i));
+                System.out.println(i + " : " + myArrayList.get(i).toString());
             }//end for
             
             System.out.println("Which do you wish to add? Press -1 to Exit.");
@@ -44,8 +44,9 @@ public class PolynomialDemo {
 
             }
         }
-        }
     }
+}
+    
     private static ArrayList<Polynomial> getPolyList() {
         ArrayList<Polynomial> myArrayList = new ArrayList<>();
         
@@ -58,6 +59,7 @@ public class PolynomialDemo {
                 Polynomial poly = 
                         new Polynomial(infile.nextLine());
                 myArrayList.add(poly);
+                
                 System.out.println(poly);
             }//end while
             infile.close();
@@ -82,4 +84,4 @@ public class PolynomialDemo {
         return true;
         
     }
-    } 
+} 
